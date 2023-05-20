@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        color: white;
+    }
+</style>
+<body>
+
+    <h1>Dom = Document Object Model</h1>
+    <p>Resultado aqui</p>
+    <p>aprendendo a usar o <strong>DOM</strong> em javascript</p>
+    <div id="msg">Clique em mim</div>
+
+    <script>
+    //SELECIONANDO OS ELEMENTO POR MARCA:
+    var corpo = window.document.body;
+    var p1 = window.document.getElementsByTagName('p')[0];
+    window.document.write(p1.innerText);//se usa o "Write" para escrever na tela, e o "innerText" para mostrar o conteudo dentro da variavel.
+    document.write(p1.innerHTML)// com o innerText não pega as formatações dentro das tegs. O innerHTML puxa do mesmo jeito que foi configurado no HTML.
+
+    corpo.style.background = 'black'// conseguindo manipular o CSS atravez do JS.
+    p1.style.color = 'blue'
+
+    /*SELECIONANDO ELEMENTOS POR ID:
+    quando o getElement(s) terminar com "S" recebe o final a chave para indicar qual é o elemento. pois seleciona mais de um elemento.
+    documento.getElementsByTagName()[];
+    document.getElementsByClassName()[];
+    document.getElementsByName()[];
+    document.getElementsByTagNameNS()[];*/
+
+    /*var d = window.document.getElementById('msg');
+    d.style.background = 'green';
+    d.innerText = 'estou no aguardo'; //usando o innertext para modificar o que estava escrito.*/
+
+    //UTILIZANDO A SELCIONAR ELEMENTOS POR "QUERYSELECTOR"
+    var d = window.document.querySelector('div#msg');//quando for ID = #, e quando for CLASS = "."
+    d.style.background = 'blue'
+    </script>
+</body>
+</html>
